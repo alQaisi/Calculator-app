@@ -86,6 +86,8 @@ function setNum(num){
     if(num=="." && result.value.includes(".")){
         return null;
     }
+    if(result.value[0]=="0" && result.value.length==1 && num=="0")
+        return null;
     calc.setNum(num);
 }
 function setOperation(operation){
