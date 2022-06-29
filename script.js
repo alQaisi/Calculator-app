@@ -34,7 +34,6 @@ const calc={
                 this.num1/=this.num2;
                 break;
         }
-        this.num1=this.num1;
     }
     ,
     setOperation:function(operation){
