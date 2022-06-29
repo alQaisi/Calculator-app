@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+*{
+    font-family: 'League Spartan', sans-serif;
+}
+html{
+    font-size: 32px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100vh;
+    background-color: hsl(222, 26%, 31%);
+    display: grid;
+    place-items: center;
+}
+main{
+    width:90%;
+    position: relative;
+    max-width: 550px;
+    margin: 25px auto;
+}
+h1{
+    font-size: 1.25rem;
+    margin-block: 0;
+    color: white;
+}
+.calc-header{
+    box-sizing: border-box;
+    padding:15px 0;
+    margin-bottom:15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+input.result{
+    width: 100%;
+    box-sizing: border-box;
+    padding:45px 30px;
+    font-size:1.75rem;
+    text-align: right;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(24,31,50,255);
+    margin-bottom: 25px;
+}
+.prev-operation{
+    color: white;
+}
+.buttons{
+    border-radius: 7px;
+    width: 100%;
+    padding:25px 30px;
+    background-color: hsl(223, 31%, 20%);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:25px;
+}
+.span2{
+    grid-column: span 2;
+}
+button{
+    font-size: 1rem;
+    padding:17px 0 10px;
+    border-radius:11px;
+    border: none;
+    outline: none;
+    background-color: hsl(30, 25%, 89%);
+    border-bottom:4px solid hsl(28, 16%, 65%);
+    color: hsl(221, 14%, 31%);
+    cursor: pointer;
+}
+button:hover{
+    filter:brightness(125%);
+}
+.result-key{
+    background-color: hsl(6, 63%, 50%);
+    border-bottom:4px solid hsl(6, 70%, 34%);
+    color: white;
+}
+.controller{
+    color: white;
+    background-color: hsl(225, 21%, 49%);
+    border-bottom:4px solid hsl(224, 28%, 35%);
+    font-size: .9rem;
+}
+.theme-title{
+    font-size: .4rem;
+    margin-right: 25px;
+    letter-spacing: 1px;
+    margin-left: auto;
+    margin-top: 5px;
+    color: white;
+}
+.theme-controller{
+    background-color: hsl(223, 31%, 20%);
+    padding: 1px 2px 0px 1px;
+    border-radius: 50px;
+    position: relative;
+}
+.radio-container{
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.radio-container input{
+    height: 17px;
+    width: 17px;
+    background-color: #eee;
+    border-radius: 50%;
+    opacity:0;
+}
+input+span{
+    position: absolute;
+    left:5px;
+    top: 4px;
+    border-radius: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+    opacity: 0;
+	background: hsl(6, 63%, 50%);
+}
+input+span:hover{
+    filter: brightness(150%);
+    opacity: 70%;
+}
+input:checked+span{
+    opacity: 1;
+}
+.themeNumber{
+    position: absolute;
+    font-size: .4rem;
+    color: white;
+    top:-15px;
+}
+.num1{
+    left: 10px;
+}
+.num2{
+    left: 45px;
+}
+.num3{
+    left: 80px;
+}
+body.theme2,main.theme2{
+    background-color: hsl(0, 0%, 90%);
+}
+.theme2 .calc-header *{
+    color: hsl(60, 10%, 19%);
+}
+.theme2 input+span{
+    background-color: hsl(25, 98%, 40%);
+}
+.theme2 .result,.theme2 .prev-operation{
+    background-color: white;
+    color: hsl(60, 10%, 19%);
+}
+.theme2 .buttons,.theme2 .theme-controller{
+    background-color: hsl(0, 5%, 81%);
+}
+.theme2 button{
+    color: hsl(60, 10%, 19%);
+    background-color: hsl(45, 7%, 89%);
+    border-bottom: 4px solid  hsl(35, 11%, 61%);
+}
+.theme2 .controller{
+    color: white;
+    background-color: hsl(185, 42%, 37%);
+    border-bottom:4px solid hsl(185, 58%, 25%);
+}
+.theme2 .result-key{
+    color: white;
+    background-color: hsl(25, 98%, 40%);
+    border-bottom: 4px solid hsl(25, 99%, 27%)
+}
+
+body.theme3,main.theme3{
+    background-color: hsl(268, 75%, 9%);
+}
+.theme3 .calc-header *{
+    color: hsl(52, 100%, 62%);
+}
+.theme3 input+span{
+    background-color: hsl(176, 100%, 44%);
+}
+.theme3 .result,.theme3 .prev-operation{
+    background-color: hsl(268, 71%, 12%);
+    color: hsl(52, 100%, 62%);
+}
+.theme3 .buttons,.theme3 .theme-controller{
+    background-color: hsl(268, 71%, 12%);
+}
+.theme3 button{
+    color: hsl(52, 100%, 62%);
+    background-color: hsl(268, 47%, 21%);
+    border-bottom: 4px solid  hsl(290, 70%, 36%);
+}
+.theme3 .controller{
+    color: white;
+    background-color: hsl(281, 89%, 26%);
+    border-bottom:4px solid hsl(285, 91%, 52%);
+}
+.theme3 .result-key{
+    color: hsl(198, 20%, 13%);
+    background-color: hsl(176, 100%, 44%);
+    border-bottom: 4px solid hsl(177, 92%, 70%);
+}
+.result-container{
+    position: relative;
+}
+.prev-operation{
+    position: absolute;
+    right:30px;
+    top:10px;
+    font-size: .55rem;
+    letter-spacing: 1px;
+}
+@media screen and (max-width:500px) {
+    .buttons{
+        padding:15px 20px;
+        gap:15px 15px;
+    }
+    button{
+        border-radius:5px;
+        font-size: .95rem;
+        padding:20px 10px 15px;
+    }
+    input.result{
+        font-size: 1.5rem;
+        padding:30px 20px;
+    }
+    .controller{
+        font-size: .65rem;
+    }
+}
