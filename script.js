@@ -39,6 +39,8 @@ const calc={
     }
     ,
     setOperation:function(operation){
+        if(this.num1=="")
+            return null;
         if(this.num2==""){
             prev.textContent=`${this.num1} ${operation}`
             this.operation=operation;
