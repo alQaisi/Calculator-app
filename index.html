@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+  <link rel="stylesheet" href="style.css">
+  <title>Calculator app</title>
+</head>
+<body>
+  <main>
+    <div class="calc-header">
+      <h1 class="title">calc</h1>
+      <span class="theme-title">THEME</span>
+      <div class="theme-controller">
+        <span class="themeNumber num1">1</span>
+        <label class="radio-container" for="theme1">
+          <input type="radio" checked="checked" name="radio" id="theme1" onchange="changeTheme('theme1')">
+          <span></span>
+        </label>
+        <span class="themeNumber num2">2</span>
+        <label class="radio-container" for="theme2">
+          <input type="radio" name="radio" id="theme2" onchange="changeTheme('theme2')">
+          <span></span>
+        </label>
+        <span class="themeNumber num3">3</span>
+        <label class="radio-container" for="theme3">
+          <input type="radio" name="radio" id="theme3" onchange="changeTheme('theme3')">
+          <span></span>
+        </label>
+        
+      </div>
+    </div>
+    <div class="result-container">
+      <span class="prev-operation"></span>
+      <input aria-label="result" type="text" name="result" value="" class="result" readonly>
+    </div>
+    <div class="buttons">
+      
+      <button onclick="setNum(7)">7</button>
+      <button onclick="setNum(8)">8</button>
+      <button onclick="setNum(9)">9</button>
+      <button class="controller" onclick="deleteNum()">DEL</button>
+
+      <button onclick="setNum(4)">4</button>
+      <button onclick="setNum(5)">5</button>
+      <button onclick="setNum(6)">6</button>
+      <button onclick="setOperation('+')">+</button>
+
+      <button onclick="setNum(1)">1</button>
+      <button onclick="setNum(2)">2</button>
+      <button onclick="setNum(3)">3</button>
+      <button onclick="setOperation('-')">-</button>
+
+      <button onclick="setNum('.')">.</button>
+      <button onclick="setNum(0)">0</button>
+      <button onclick="setOperation('/')">/</button>
+      <button onclick="setOperation('*')">x</button>
+
+      <button class="span2 controller" onclick="reset()">RESET</button>
+      <button class="span2 result-key" onclick="getResult()">=</button>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
