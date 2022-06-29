@@ -20,6 +20,8 @@ const calc={
             this.num2=result.value;
     },
     calcultating:function(){
+        this.num1=parseFloat(this.num1);
+        this.num2=parseFloat(this.num2);
         switch(this.operation){
             case "+":
                 this.num1+=this.num2;
@@ -43,8 +45,6 @@ const calc={
             result.value="";
             return this.setNum("");
         }else{
-            this.num1=parseFloat(this.num1);
-            this.num2=parseFloat(this.num2);
             this.calcultating();
             this.num2="";
             result.value="";
