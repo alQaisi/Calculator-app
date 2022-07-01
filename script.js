@@ -1,19 +1,3 @@
-const body=document.querySelector("body");
-const main=document.querySelector("main");
-function changeTheme(theme){
-   theme=theme==null?"theme1":theme;     
-   body.className=theme;
-   main.className=theme;
-   localStorage.setItem('theme',theme);
-}
-function setTheme(){
-    const theme=localStorage.getItem("theme");
-    const radioButton=document.querySelector(`#${theme}`);
-    radioButton?radioButton.checked=true:null;
-    changeTheme(theme);
-}
-setTheme();
-
 const prev=document.querySelector(".prev-operation");
 const result=document.querySelector(".result")
 
@@ -50,19 +34,14 @@ const calc={
     setOperation:function(operation){
         if(this.num1=="")
             return null;
-        if(this.num2==""){
-            prev.textContent=`${this.num1} ${operation}`
-            this.operation=operation;
-            result.value="";
-            return this.setNum("");
-        }else{
+        if(this.num2!==""){
             this.calcultating();
             this.num2="";
-            result.value="";
-            this.operation=operation;
-            prev.textContent=`${this.num1} ${operation}`;
-            return this.setNum("");
         }
+        result.value="";
+        prev.textContent=`${this.num1} ${operation}`;
+        this.operation=operation;
+        return this.setNum("");
     },
     getResult:function(){
         if(this.num1!=="" && this.num2!=""){
